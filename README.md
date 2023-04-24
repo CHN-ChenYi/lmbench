@@ -1,3 +1,17 @@
+# Prerequisite
+
+* libtirpc(https://sourceforge.net/projects/libtirpc/)
+
+```sh
+CC=riscv64-unknown-linux-gnu-gcc
+SYSROOT=`${CC} -print-sysroot`
+./configure --host=${CC} --prefix=${SYSROOT}/usr --disable-gssapi
+make
+make install
+```
+
+# README
+
 README for lmbench 2alpha8 net release.
 
 To run the benchmark, you should be able to say:
