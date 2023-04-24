@@ -57,8 +57,9 @@ RESULTS=Results/$(OS)
 SAMPLES=lmbench/Results/aix/rs6000 lmbench/Results/hpux/snake \
 	lmbench/Results/irix/indigo2 lmbench/Results/linux/pentium \
 	lmbench/Results/osf1/alpha lmbench/Results/solaris/ss20* 
+SYSROOT=`$(CC) -print-sysroot`
 
-COMPILE=$(CC) $(CFLAGS) -Wall -O2 -ffunction-sections -Wl,--gc-sections -s -static -I$(RISCV)/../sysroot/usr/include/tirpc $(CPPFLAGS) $(LDFLAGS)
+COMPILE=$(CC) $(CFLAGS) -Wall -O2 -ffunction-sections -Wl,--gc-sections -s -static -I$(SYSROOT)/usr/include/tirpc $(CPPFLAGS) $(LDFLAGS)
 
 INCS =	bench.h lib_mem.h lib_tcp.h lib_udp.h stats.h timing.h
 
